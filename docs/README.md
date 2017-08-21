@@ -38,7 +38,7 @@ the API.
 ### Phase 3: Questions (2 days)
 
 **Objective:** Questions belonging to users can be answered, viewed as well as shared
-questions between users
+questions between users and match percentage as a result
 
 ### Phase 4: Messages (2 days)
 
