@@ -18,13 +18,35 @@ By the end of week 9, this application will have at minimum the following featur
 * [Sample State][sample-state]
 
  [wireframes]: wireframes
- [components]: component-hierarchy.md 
- [sample-state]: docs/sample-state.md
- [api-endpoints]: docs/api-endpoints.md
- [schema]: docs/schema.md
+ [components]: component-hierarchy.md
+ [sample-state]: sample-state.md
+ [api-endpoints]: api-endpoints.md
+ [schema]: schema.md
 
 ## Implementation Timeline
 
+
+### Phase 1: Backend setup and Front End User Authentication (1.5 days)
+
+**Objective:** Functioning rails project with front-end Authentication
+
+### Phase 2: Profile and Details Model, API, and components (1.5 days)
+
+**Objective:** Profiles can be created, read, edited and destroyed through
+the API.
+
+### Phase 3: Questions (2 days)
+
+**Objective:** Questions belonging to users can be answered, viewed as well as shared
+questions between users
+
+### Phase 4: Messages (2 days)
+
+**Objective:** Conversations can be started between users and viewed by both parties
+
+### Phase 5: Full on stying (1 day, W2 Th 6pm)
+
+**Objective:** Work on UI and robust styling
 
 ## Bonus features
 - [ ] Favorites
