@@ -1,52 +1,53 @@
+```js
 {
   entities: {
     users: {
       1: {
         id: 1,
         username: 'Guest',
-       image_url: '/images/1'
-       Profile_url: ‘/profiles/1’
-       Match: ’25%’
-       Liked: false
-       Location: astoria, ny
+       image_url: '/images/1',
+       Profile_url: ‘/profiles/1’,
+       Match: 25,
+       Liked: false,
+       Location: astoria, ny,
       },
       2: {
         id: 2,
-        Username: ‘guest2’',
-       image_url: '/images/2'
-       Profile_url: ‘/profiles/2’
-       Match: ‘70%’
-       Liked: true
-       Location: boston, ma
+        Username: ‘guest2’,
+       image_url: '/images/2',
+       Profile_url: ‘/profiles/2’,
+       Match: 70,
+       Liked: true,
+       Location: 'boston, ma',
       },
     },
    Messages:{
      1: {
-      	User_id: 1
-      	Content: lorem ipsum
+      	User_id: 1,
+      	Content: lorem ipsum,
       }
      2: {
-      	User_id: 2
-      	Content: lorem ipsum
+      	User_id: 2,
+      	Content: lorem ipsum,
       }
     }
     Conversations:{
       1: {
-        user_id: 2
-        last_msg: hey
+        user_id: 2,
+        last_msg: hey,
       }
     }
    Messages: {
      1:{
-       content: 'hey there'
-       conversations_id: 2
+       content: 'hey there',
+       conversations_id: 2,
      }
 
    },
    Questions: {
      1: {
-       question_id : 1
-       question_body: 'have you ever'
+       question_id : 1,
+       question_body: 'have you ever',
        answers:[
         'done this',
         'done that'

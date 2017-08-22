@@ -14,6 +14,10 @@
  - 'PATCH /api/users/' edit preferences
  - 'DELETE /api/users/' destroy account
 
+### Session
+ - 'POST /api/session' log in user
+ - 'DELETE /api/session' log out user
+
 ### Messages
  - 'GET /api/conversations' last message and all conversations for current user
  - 'GET /api/conversations/:id' return specific conversation and messages
