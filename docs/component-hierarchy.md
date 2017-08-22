@@ -1,32 +1,32 @@
 ## Component Hierarchy
 
-**LandingContainer
+**LandingContainer**
  -Login-header
  -Sign-Up Form
 
-**Header
+**Header**
 
-**Footer
+**Footer**
 
-**SearchPrefsContainer
+**SearchPrefsContainer**
  -LookingFor
  -SearchBy
 
-**UserIndexContainer
+**UserIndexContainer**
  -User
-**UserHeader
+**UserHeader**
 
-**ProfileContainer
+**ProfileContainer**
  -ProfDetails
  -ProfFacts
 
-**QuestionsContainer
+**QuestionsContainer**
  -Question
 
-**ConversationsIndexContainer
+**ConversationsIndexContainer**
  -ConversationIndexItem
 
-**ConversationContainer
+**ConversationContainer**
  -Message
  -NewMessageForm
 
