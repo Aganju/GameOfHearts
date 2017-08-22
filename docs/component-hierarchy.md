@@ -1,34 +1,34 @@
 ## Component Hierarchy
 
 **LandingContainer**
- -Login-header
- -Sign-Up Form
+ - Login-header
+ - Sign-Up Form
 
 **Header**
 
 **Footer**
 
 **SearchPrefsContainer**
- -LookingFor
- -SearchBy
+ - LookingFor
+ - SearchBy
 
 **UserIndexContainer**
- -User
+ - User
 **UserHeader**
 
 **ProfileContainer**
- -ProfDetails
- -ProfFacts
+ - ProfDetails
+ - ProfFacts
 
 **QuestionsContainer**
- -Question
+ - Question
 
 **ConversationsIndexContainer**
- -ConversationIndexItem
+ - ConversationIndexItem
 
 **ConversationContainer**
- -Message
- -NewMessageForm
+ - Message
+ - NewMessageForm
 
 ##Routes
 |Path   | Component   |
