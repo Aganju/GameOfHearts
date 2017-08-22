@@ -1,6 +1,6 @@
 # API endpoints
 
-##HTML API
+## HTML API
 
 ### Root
  - 'GET /' - loads app
