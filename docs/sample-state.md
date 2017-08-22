@@ -92,6 +92,6 @@
   session: {
     id: 1,
     username: 'Guest',
-   imager_url: '/1/guest'
+    image_url: '/1/guest'
   }
 }

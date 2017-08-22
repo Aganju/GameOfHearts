@@ -20,7 +20,7 @@ my_life         | text    | not null
 msg_me_if       | text    | not null
 good_at         | text    | not null
 faves           | text    | not null
-image_url       | string  | not null
+image_urls      | array   | not null
 private         | text    | not null
 friday_night    | text    | not null
 thoughts        | text    | not null
@@ -33,6 +33,8 @@ id              | integer   | not null, primary key
 user_id         | integer   | not null, indexed, unique, foreign key
 age             | integer   | not null
 gender          | string    | not null
+location        | string    | not null
+main_img_url    | string    | not null
 orientation     | string    | not null
 height          | string    | not null
 body_type       | string    | not null
