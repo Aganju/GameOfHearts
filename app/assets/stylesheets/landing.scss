@@ -1,0 +1,81 @@
+$lightest-base-color: #F99DA4;
+$lighter-base-color: #D66870;
+$base-color: #AF3D45;
+$darker-base-color: #881C45;
+$darkest-base-color: #5D060C;
+
+#root{
+  font-family: sans-serif;
+
+}
+
+#header{
+  #login{
+    background-color: #B46B3F;
+  }
+  length: 100px;
+}
+
+#signup-form{
+  background-color: #DC966B;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 20px;
+  flex-wrap: wrap;
+  color: white;
+
+  input{
+    background: white;
+    margin: 10px;
+    margin-left: 0px;
+    height: 46px;
+    width: 180px;
+    border-radius: 3px;
+    color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .inputs{
+    display: flex;
+  }
+
+  #form-slice2{
+    display: flex;
+    flex-direction: column;
+  }
+
+  #location-and-email{
+    display: flex;
+  }
+
+  #location, #email{
+    @extend #form-slice2;
+  }
+
+  label{
+    @extend #form-slice2;
+  }
+  button{
+    background: $base-color;
+    margin: 10px;
+    width: 125px;
+    height: 50px;
+    border-radius: 5px;
+    text-align: center;
+
+    &:hover{
+      background: $lighter-base-color;
+    }
+  }
+  select{
+    @extend input;
+    height: 50px;
+
+    &:hover{
+      border: 1px solid #A9A9A9;
+      cursor: pointer;
+    }
+  }
+}
