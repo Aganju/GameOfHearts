@@ -1,0 +1,76 @@
+@import "defaults";
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.5)
+  }
+
+.content{
+    font-family: sans-serif;
+    position: absolute;
+    top: 45px;
+    left: 35%;
+    right: 35%;
+    bottom: 300px;
+    border: 1px solid #ccc;
+    background: #fff;
+    overflow: auto;
+    border-radius: 4px;
+    outline: none;
+    padding: 20px
+
+  }
+
+  #header{
+    display: flex;
+    justify-content: space-between;
+    background: #DC966B;
+
+    button{
+      margin: 10px;
+      border-radius: 3px;
+      padding: 5px;
+      color: white;
+      background: transparent;
+      border: 1px solid  white;
+    }
+  }
+
+  #signin-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2{
+      font-size: 35px;
+    }
+    input{
+      background: white;
+      margin: 10px;
+      margin-left: 0px;
+      height: 46px;
+      width: 200px;
+      border-radius: 3px;
+      color: black;
+      padding-left: 10px;
+      padding-right: 10px;
+      border: 1px solid gray;
+    }
+
+    button{
+      background: $base-color;
+      margin: 10px;
+      width: 200px;
+      height: 50px;
+      border-radius: 5px;
+      text-align: center;
+      color: white;
+      &:hover{
+        background: $lighter-base-color;
+      }
+    }
+  }

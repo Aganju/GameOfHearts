@@ -3,8 +3,8 @@ import React from 'react';
 const SignupForm = ({slice, handleChange, currentState}) => {
 
   const optionCreator = (options) => {
-    return options.map((option) => {
-        return <option value={option}>{option}</option>;
+    return options.map((option, idx) => {
+        return <option key={idx} value={option}>{option}</option>;
       });
     };
 

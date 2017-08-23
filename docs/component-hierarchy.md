@@ -6,7 +6,8 @@
      - SignupFormSlice
 
 **Header**
-
+  - LoginForm
+   
 **Footer**
 
 **SearchPrefsContainer**

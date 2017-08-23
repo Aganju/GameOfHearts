@@ -1,8 +1,4 @@
-$lightest-base-color: #F99DA4;
-$lighter-base-color: #D66870;
-$base-color: #AF3D45;
-$darker-base-color: #881C45;
-$darkest-base-color: #5D060C;
+@import "defaults";
 
 #root{
   font-family: sans-serif;
@@ -15,6 +11,7 @@ $darkest-base-color: #5D060C;
   }
   length: 100px;
 }
+
 
 #signup-form{
   background-color: #DC966B;
@@ -36,6 +33,7 @@ $darkest-base-color: #5D060C;
     padding-left: 10px;
     padding-right: 10px;
   }
+
 
   .inputs{
     display: flex;
