@@ -10,7 +10,7 @@ export default class SignupForm extends React.Component {
       email: '',
       password: '',
       orientation: 'Straight',
-      gender: 'Female',
+      gender: 'Woman',
       year: 0,
       month: 0,
       day: 0,
@@ -44,7 +44,7 @@ export default class SignupForm extends React.Component {
     const buttonText = this.buttonTexts[this.state.formSlice];
 
     return (
-      <form>
+      <form id='signup-form'>
         <FormSlice
           slice={this.state.formSlice}
           handleChange={this.handleChange}
