@@ -2,8 +2,8 @@
 
 **LandingContainer**
  - Landing
-  + SignupForm
-   - SignupFormSlice
+   + SignupForm
+     - SignupFormSlice
 
 **Header**
 
