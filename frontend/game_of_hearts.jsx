@@ -6,7 +6,13 @@ import * as SessionActions from './actions/session_actions';
 import Root from './components/root';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const store = configureStore();
+    let store;
+  if(window.currentUser) {
+    store= configureStore({session: window.currentUser});
+  }
+  else {
+    store = configureStore();
+  }
   window.getState = store.getState;
   window.dispatch = store.dispatch;
 
