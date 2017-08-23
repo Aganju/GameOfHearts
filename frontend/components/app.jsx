@@ -1,8 +1,11 @@
-import { Route } from 'react';
+import React from 'react';
+import LandingContainer from './landing/landing_container';
+import { AuthRoute, ProtectedRoute } from '../utils/route_util';
 
 const App = () => (
   <div>
-    <Header />
     <AuthRoute path='/' component={LandingContainer} />
   </div>
 );
+
+export default App;
