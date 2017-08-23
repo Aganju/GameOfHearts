@@ -74,7 +74,7 @@ const SignupForm = ({slice, handleChange, currentState}) => {
               </select>
             </div>
           </div>
-          <div id = 'location-and-email'> 
+          <div id = 'location-and-email'>
             <div id='location'>
               <span>Location</span>
               <input
@@ -96,19 +96,24 @@ const SignupForm = ({slice, handleChange, currentState}) => {
       );
     case 2:
       return (
-        <div>
-          Username
-          <input
-            type='text'
-            onChange = { handleChange('username') }
-            value={ currentState.username }
-          />
-          Password
-          <input
-            type='password'
-            onChange = { handleChange('password') }
-            value={ currentState.password }
-          />
+        <div className='inputs'>
+          <label>
+            Username
+            <input
+              type='text'
+              onChange = { handleChange('username') }
+              value={ currentState.username }
+              />
+          </label>
+
+          <label>
+            Password
+            <input
+              type='password'
+              onChange = { handleChange('password') }
+              value={ currentState.password }
+              />
+          </label>
         </div>
       );
     default:
