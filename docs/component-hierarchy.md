@@ -1,8 +1,9 @@
 ## Component Hierarchy
 
 **LandingContainer**
- - Login-header
- - Sign-Up Form
+ - Landing
+  + SignupForm
+   - SignupFormSlice
 
 **Header**
 
@@ -33,7 +34,7 @@
 ## Routes
 |Path   | Component   |
 |-------|-------------|
-| "/landing" | "LandingContainer" |
+| "/" | "LandingContainer" |
 | "/" | "Header" |
 | "/" | "Footer" |
 | "/browse" | "SearchPrefsContainer" |

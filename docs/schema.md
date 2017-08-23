@@ -31,7 +31,7 @@ column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
 user_id         | integer   | not null, indexed, unique, foreign key
-age             | integer   | not null
+birthday        | date      | not null
 gender          | string    | not null
 location        | string    | not null
 main_img_url    | string    | not null

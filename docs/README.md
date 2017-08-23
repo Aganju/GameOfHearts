@@ -1,3 +1,12 @@
+# GameOfHearts
+
+[Heroku link][heroku] 
+
+[Trello link][trello]
+
+[heroku]: https://game-of-hearts.herokuapp.com
+[trello]: https://trello.com/b/occseZaz/game-of-hearts
+
 ## Minimum Viable Product
 GameOfHearts is a webapp modeled on the dating site OKCupid.
 By the end of week 9, this application will have at minimum the following features coupled with -0 bugs, smooth navigation, satisfactory seed data and excellent CSS styling:
