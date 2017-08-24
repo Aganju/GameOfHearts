@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import { Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 export const authRoute = ({ path, component, session}) => {
@@ -24,5 +24,5 @@ const mapStateToProps = (state) => {
   return { session: state.session };
 };
 
-export const AuthRoute = connect(mapStateToProps, null)(authRoute);
-export const ProtectedRoute = connect(mapStateToProps, null)(protectedRoute);
+export const AuthRoute = withRouter(connect(mapStateToProps, null)(authRoute));
+export const ProtectedRoute = withRouter(connect(mapStateToProps, null)(protectedRoute));
