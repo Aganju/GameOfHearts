@@ -28,7 +28,7 @@
   #header{
     display: flex;
     justify-content: space-between;
-    background: #DC966B;
+    background-color: $base-color;
 
     button{
       margin: 10px;
@@ -38,6 +38,12 @@
       background: transparent;
       border: 1px solid  white;
     }
+}
+
+  #login-header{
+    @extend #header;
+    background: #DC966B;
+
   }
 
   #signin-form{
