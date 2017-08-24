@@ -23,10 +23,15 @@ class Header extends React.Component{
     this.state = { modalOpen: false };
 
     this.flipModal = this.flipModal.bind(this);
+    this.guestLogin = this.guestLogin.bind(this);
   }
 
   flipModal(){
     this.setState({ modalOpen: !this.state.modalOpen });
+  }
+
+  guestLogin(){
+    this.props.login({username: 'Cupid', password: 'password'});
   }
 
   render(){
@@ -46,6 +51,7 @@ class Header extends React.Component{
             <div id='signIn'>
               Have an account?
               <button onClick={ this.flipModal }>Sign in</button>
+              <button onClick={ this.guestLogin }>Guest login</button>
             </div>
             <Modal
               onClick={ this.flipModal }

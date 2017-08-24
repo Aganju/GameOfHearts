@@ -1,10 +1,13 @@
 import React from 'react';
 import SignupForm from './signup_form';
 
-const Landing = ({ signUp }) => {
+const Landing = ({ signUp, userCreationErrors, addError }) => {
   return (
     <div>
-      <SignupForm signUp={signUp} />
+      <SignupForm
+         signUp={signUp}
+         addError={addError}
+         userCreationErrors={userCreationErrors} />
       <div className='about'>
         <ul>
           <li>cool stuff 1</li>

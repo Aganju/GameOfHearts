@@ -30,28 +30,58 @@ export default class SignupForm extends React.Component {
     };
   }
 
+  checkErrors(){
+    switch (this.state.formSlice) {
+      case 0:
+        return true;
+      case 1:
+        if((this.state.email) && Boolean(this.state.location)){
+          this.props.addError({emptyFields: ''});
+          return true;
+        }else {
+          this.props.addError({emptyFields: 'please fill all fields'});
+          return false;
+        }
+      default:
+        return true;
+    }
+  }
+
   handleSubmit(e){
     e.preventDefault();
-    if(this.state.formSlice === 2){
-      this.props.signUp(this.state).then((res)=>{console.log(res);});
-    }
-    else {
-      this.setState(merge({formSlice: this.state.formSlice++}, this.state));
+    if(this.checkErrors()){
+      if(this.state.formSlice === 2){
+        this.props.signUp(this.state).then(null);
+      }
+      else {
+        this.setState(merge({formSlice: this.state.formSlice++}, this.state));
+      }
     }
   }
 
   render(){
     const buttonText = this.buttonTexts[this.state.formSlice];
 
+    let errors = [];
+    errors = errors
+            .concat(this.props.userCreationErrors.server)
+            .concat( this.props.userCreationErrors.emptyFields)
+            .map((err, idx) => <li key={idx}>{err}</li>);
+
     return (
-      <form id='signup-form'>
-        <FormSlice
-          slice={this.state.formSlice}
-          handleChange={this.handleChange}
-          currentState={this.state}
-          />
-        <button onClick={ this.handleSubmit }>{ buttonText }</button>
-      </form>
+      <div id='signup-form-container'>
+        <form id='signup-form'>
+          <FormSlice
+            slice={this.state.formSlice}
+            handleChange={this.handleChange}
+            currentState={this.state}
+            />
+          <button onClick={ this.handleSubmit }>{ buttonText }</button>
+        </form>
+        <div className='errors'>
+          {  errors }
+        </div>
+      </div>
     );
 
   }
