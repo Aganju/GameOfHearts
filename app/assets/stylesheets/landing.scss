@@ -93,3 +93,19 @@
     }
   }
 }
+.about{
+  display: flex;
+}
+.splash-info-div{
+  padding-top: 50px;
+  padding: 20px;
+  width: 32%;
+  height: 300px;
+  text-align: center;
+  font-size: 20px;
+  h1{
+    font-weight: bold;
+    font-size: 25px;
+    margin: 5px;
+  }
+}
