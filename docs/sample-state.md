@@ -87,6 +87,7 @@
   },
   errors: {
     login: ["Incorrect username/password combination"],
+    userCreation: ['password must be 6 characters'],
     Question:  ["Question answer cannot be blank"],
   },
   session: {
