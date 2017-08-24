@@ -12,9 +12,25 @@
   length: 100px;
 }
 
+#signup-form-container
+{
+  background-color: #DC966B;
+  display: flex;
+
+  .errors{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style: none;
+
+    li{
+      margin:5px;
+    }
+
+  }
+}
 
 #signup-form{
-  background-color: #DC966B;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
