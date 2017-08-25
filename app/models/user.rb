@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
   attr_reader :password
 
+  has_one :profile
+  has_one :detail
+
   def ensure_session_token
     self.session_token ||= User.generate_session_token
   end
