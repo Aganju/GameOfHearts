@@ -11,10 +11,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170822135218) do
+ActiveRecord::Schema.define(version: 20170825192613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "details", force: :cascade do |t|
+    t.integer  "user_id",               null: false
+    t.date     "birthdate",             null: false
+    t.string   "gender",                null: false
+    t.float    "latitude",              null: false
+    t.float    "longitude",             null: false
+    t.string   "orientation"
+    t.string   "height"
+    t.string   "body_type"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "address"
+    t.string   "main_img_file_name"
+    t.string   "main_img_content_type"
+    t.integer  "main_img_file_size"
+    t.datetime "main_img_updated_at"
+  end
+
+  add_index "details", ["user_id"], name: "index_details_on_user_id", unique: true, using: :btree
+
+  create_table "profiles", force: :cascade do |t|
+    t.integer  "user_id",      null: false
+    t.text     "summary"
+    t.text     "six_things"
+    t.text     "my_life"
+    t.text     "msg_me_if"
+    t.text     "good_at"
+    t.text     "faves"
+    t.text     "private"
+    t.text     "friday_night"
+    t.text     "thoughts"
+    t.text     "first_thing"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false

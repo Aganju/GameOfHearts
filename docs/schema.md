@@ -14,17 +14,17 @@ column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer | not null, primary key
 user_id         | integer | not null, indexed, unique, foreign_key
-summary         | text    | not null
-six_things      | text    | not null
-my_life         | text    | not null
-msg_me_if       | text    | not null
-good_at         | text    | not null
-faves           | text    | not null
-image_urls      | array   | not null
-private         | text    | not null
-friday_night    | text    | not null
-thoughts        | text    | not null
-first_thing     | text    | not null
+summary         | text    |
+six_things      | text    |
+my_life         | text    |
+msg_me_if       | text    |
+good_at         | text    |
+faves           | text    |
+image_url       | string  |
+private         | text    |
+friday_night    | text    |
+thoughts        | text    |
+first_thing     | text    |
 
 ## details
 column name     | data type | details
@@ -33,11 +33,13 @@ id              | integer   | not null, primary key
 user_id         | integer   | not null, indexed, unique, foreign key
 birthday        | date      | not null
 gender          | string    | not null
-location        | string    | not null
-main_img_url    | string    | not null
-orientation     | string    | not null
-height          | string    | not null
-body_type       | string    | not null
+latitude        | float     | not null, indexed
+longitude       | float     | not null, indexed
+address         | string    | not null
+main_img        |attatchment|
+orientation     | string    |
+height          | string    |
+body_type       | string    |
 
 ## questions
 column name     | data type | details
