@@ -1,9 +1,14 @@
-$lightest-base-color: #F99DA4;
-$lighter-base-color: #D66870;
-$base-color: #AF3D45;
-$darker-base-color: #881C45;
-$darkest-base-color: #5D060C;
+$lightest-base-color: #F75F71;
+$lighter-base-color: #F5364C;
+$base-color: #EA031E;
+$darker-base-color: #B80016;
+$darkest-base-color: #900011;
+$landing: #FF8C5F;
 
 .errors{
-  color: red;
+  color: $base-color;
+}
+
+#root{
+  background-color: #F3F5F9;
 }

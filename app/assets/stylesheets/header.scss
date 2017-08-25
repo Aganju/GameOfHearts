@@ -28,12 +28,13 @@
   #header{
     display: flex;
     justify-content: space-between;
-    background-color: $base-color;
-
+    background-color: $lighter-base-color;
+    align-items: center;
+    color: white;
     button{
       margin: 10px;
       border-radius: 3px;
-      padding: 5px;
+      padding: 10px;
       color: white;
       background: transparent;
       border: 1px solid  white;
@@ -42,7 +43,7 @@
 
   #login-header{
     @extend #header;
-    background: #DC966B;
+    background: $landing;
 
   }
 

@@ -12,9 +12,29 @@
   length: 100px;
 }
 
+#thrones{
+  margin: 0;
+  background: $landing;
+  h1{
+    font-weight: bold;
+    font-size: 60px;
+  }
+  i{
+    font-style: italic;
+  }
+  h2{
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  h3{
+    font-size: 24px;
+    font-weight: 100;
+  }
+}
 #signup-form-container
 {
-  background-color: #DC966B;
+  background-color: $landing;
+  // background-image: image-url('khaleesi.jpg');
   display: flex;
 
   .errors{
@@ -22,8 +42,8 @@
     flex-direction: column;
     justify-content: center;
     list-style: none;
-
     li{
+      width: 200px;
       margin:5px;
     }
 
@@ -60,6 +80,10 @@
     flex-direction: column;
   }
 
+  #form-slice2 + button{
+    margin-right: 100px;
+    margin-left: 0;
+  }
   #location-and-email{
     display: flex;
   }
