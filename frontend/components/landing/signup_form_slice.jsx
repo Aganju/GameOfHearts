@@ -23,6 +23,18 @@ const SignupForm = ({slice, handleChange, currentState}) => {
     case 0:
       return(
         <div id='form-slice1'>
+          <div id='thrones'>
+            <h1>
+              THRONES, <br/>
+            NOT <i>JUST</i> GAMES
+            </h1>
+            <h3>
+              There are two kinds of throne chasers:<br/>
+              Those who win and those who die<br/>
+            We make sure you find out which you are as <br/>
+          quickly as possible, nice change right?
+            </h3>
+          </div>
           <span>You are a</span>
           <div className ='inputs'>
             <select
@@ -46,6 +58,9 @@ const SignupForm = ({slice, handleChange, currentState}) => {
     case 1:
       return(
         <div id='form-slice2'>
+          <div id='thrones'>
+            <h2>Your kingdom awaits! Just a fey keystokes away</h2>
+          </div>
           <div id='birthdate'>
             <span>Birthdate</span>
             <div className='inputs'>
@@ -96,24 +111,29 @@ const SignupForm = ({slice, handleChange, currentState}) => {
       );
     case 2:
       return (
-        <div className='inputs'>
-          <label>
-            Username
-            <input
-              type='text'
-              onChange = { handleChange('username') }
-              value={ currentState.username }
-              />
-          </label>
+        <div>
+          <div id='thrones'>
+            <h2>{'Ahh, the iron throne. Don\'t stop now!'} </h2>
+          </div>
+          <div className='inputs'>
+            <label>
+              Username
+              <input
+                type='text'
+                onChange = { handleChange('username') }
+                value={ currentState.username }
+                />
+            </label>
 
-          <label>
-            Password
-            <input
-              type='password'
-              onChange = { handleChange('password') }
-              value={ currentState.password }
-              />
-          </label>
+            <label>
+              Password
+              <input
+                type='password'
+                onChange = { handleChange('password') }
+                value={ currentState.password }
+                />
+            </label>
+          </div>
         </div>
       );
     default:

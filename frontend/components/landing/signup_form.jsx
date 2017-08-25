@@ -18,7 +18,7 @@ export default class SignupForm extends React.Component {
       formSlice: 0,
     };
 
-    this.buttonTexts = ['Continue!', 'Next', 'Done!'];
+    this.buttonTexts = ['Continue', 'Next', 'Done!'];
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
