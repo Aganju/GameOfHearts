@@ -1,8 +1,8 @@
 class Detail < ActiveRecord::Base
   validates :user, :birthdate, :gender, presence: true
-  validates :latitude, :longitude, presence: { message: 'Zipcode is invalid' }
+  validate :valid_address
   validates :address, presence: {
-    message: 'You are not located in westeros(try a US zipcode)'
+    message: 'is not located in westeros(try a US zipcode)'
   }
 
   has_attached_file :main_img
@@ -18,6 +18,10 @@ class Detail < ActiveRecord::Base
     if (geo = results.first) && geo.country == 'United States'
       obj.address = geo.city + ', ' + geo.state + ', ' + geo.postal_code
     end
+  end
+
+  def valid_address
+    errors.add(:address, 'does not exist') unless latitude && longitude
   end
 
   def zipcode=(zipcode)
