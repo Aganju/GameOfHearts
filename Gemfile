@@ -27,6 +27,18 @@ gem 'bcrypt', '~> 3.1.7'
 #use pry rails as console
 gem 'pry-rails'
 
+#for location functionality and search
+gem 'geocoder'
+
+#secure apikey storage
+gem 'figaro'
+
+#attatch images to models
+gem 'paperclip'
+
+#connect paperclip to aws
+gem 'aws-sdk
+'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
