@@ -37,8 +37,7 @@ gem 'figaro'
 gem 'paperclip'
 
 #connect paperclip to aws
-gem 'aws-sdk
-'
+gem 'aws-sdk'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
