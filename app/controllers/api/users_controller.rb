@@ -14,6 +14,22 @@ class Api::UsersController < ApplicationController
 
   def show
     @user = User.includes(:profile, :detail).where(username: params[:id])[0]
+    if @user
+      render :show
+    else
+      render json: 'No Such User', status: 401
+    end
+  end
+
+  def update
+    current_user.detail.update(detail_params)
+    current_user.profile.update(profile_params)
+    if current_user.save
+      @user = current_user
+      render :show
+    else
+      render json: current_user.errors.full_messages, status: 422
+    end
   end
 
   private
@@ -24,7 +40,8 @@ class Api::UsersController < ApplicationController
 
   def detail_params
     params.require(:user).permit(:birthdate, :gender, :zipcode,
-                                 :orientation, :height, :body_type)
+                                 :orientation, :height, :body_type,
+                                 :main_img)
   end
 
   def profile_params
