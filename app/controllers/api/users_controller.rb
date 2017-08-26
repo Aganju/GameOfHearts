@@ -13,7 +13,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = User.include(:profile, :detail).find_by(username: params[:id])
+    @user = User.includes(:profile, :detail).where(username: params[:id])[0]
   end
 
   private
