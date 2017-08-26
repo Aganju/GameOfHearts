@@ -27,4 +27,15 @@ class Detail < ActiveRecord::Base
   def zipcode=(zipcode)
     @zipcode = zipcode
   end
+
+  def age
+    now = Time.now.utc.to_date
+    if now.month > birthdate.month ||
+       now.month == birthdate.month && now.day >= birthdate.day
+
+      now.year - birthdate.year
+    else
+      now.year - birthdate.year - 1
+    end
+  end
 end
