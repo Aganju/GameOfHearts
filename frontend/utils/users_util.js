@@ -15,8 +15,8 @@ export const getProfile = (username) => {
 
 export const updateProfile = (profile) => {
   return $.ajax({
-      url: '/api/users/',
-      method: 'GET',
+      url: '/api/users/update',
+      method: 'PATCH',
       data: { user: profile },
   });
 };
