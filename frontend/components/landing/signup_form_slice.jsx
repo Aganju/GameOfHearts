@@ -8,6 +8,12 @@ const SignupForm = ({slice, handleChange, currentState}) => {
       });
     };
 
+  const monthOptionCreator = (options) => {
+    return options.map((option, idx) => {
+        return <option key={idx} value={idx+1}>{option}</option>;
+      });
+    };
+
     const yearOptions = [];
     for(let i = 2009; i >= 1918 ; i--){
         yearOptions.push(<option key={i} value={i}>{i}</option>);
@@ -69,7 +75,7 @@ const SignupForm = ({slice, handleChange, currentState}) => {
                 className='input-form select'
                 onChange={handleChange('month')}
               >
-                { optionCreator(['January', 'February', 'March', 'April',
+                { monthOptionCreator(['January', 'February', 'March', 'April',
                 'May', 'July', 'August', 'September', 'October', 'November',
                 'December']) }
               </select>
@@ -91,11 +97,11 @@ const SignupForm = ({slice, handleChange, currentState}) => {
           </div>
           <div id = 'location-and-email'>
             <div id='location'>
-              <span>Location</span>
+              <span>Zipcode</span>
               <input
                 type='text'
-                onChange = { handleChange('location') }
-                value={ currentState.location }
+                onChange = { handleChange('zipcode') }
+                value={ currentState.zipcode }
               />
             </div>
             <div id='email'>

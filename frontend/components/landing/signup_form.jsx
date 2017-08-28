@@ -11,10 +11,11 @@ export default class SignupForm extends React.Component {
       password: '',
       orientation: 'Straight',
       gender: 'Woman',
-      year: 0,
-      month: 0,
-      day: 0,
-      location: '',
+      zipcode: '',
+      birthdate: '',
+      year: '2009',
+      month: '1',
+      day: '1',
       formSlice: 0,
     };
 
@@ -35,7 +36,7 @@ export default class SignupForm extends React.Component {
       case 0:
         return true;
       case 1:
-        if((this.state.email) && Boolean(this.state.location)){
+        if((this.state.email) && Boolean(this.state.zipcode)){
           this.props.addError({emptyFields: ''});
           return true;
         }else {
@@ -51,7 +52,10 @@ export default class SignupForm extends React.Component {
     e.preventDefault();
     if(this.checkErrors()){
       if(this.state.formSlice === 2){
-        this.props.signUp(this.state).then(null);
+        this.setState({birthdate: (this.state.month + '-' +
+                                  this.state.day + '-' +
+                                  this.state.year)},
+                      () => this.props.signUp(this.state).then(null));
       }
       else {
         this.setState(merge({formSlice: this.state.formSlice++}, this.state));
