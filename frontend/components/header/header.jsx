@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { loginUser, logoutUser } from '../../actions/session_actions';
 import Modal from 'react-modal';
 import LoginForm from './login_form';
@@ -40,6 +41,7 @@ class Header extends React.Component{
         <div id='header'>
           <h2>Game Of Hearts </h2>
           <h2>{this.props.currentUser.username}</h2>
+          <Link to='/profile'>Profile</Link>
           <button onClick={ this.props.logout }>Sign out</button>
         </div>
       );
