@@ -16,7 +16,7 @@ class Detail < ActiveRecord::Base
   geocoded_by :zipcode
   reverse_geocoded_by :latitude, :longitude do |obj, results|
     if (geo = results.first) && geo.country == 'United States'
-      obj.address = geo.city + ', ' + geo.state + ', ' + geo.postal_code
+      obj.address = geo.city + ', ' + geo.state_code + ', ' + geo.postal_code
     end
   end
 
