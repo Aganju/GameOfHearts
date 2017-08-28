@@ -52,8 +52,8 @@ export default class SignupForm extends React.Component {
     e.preventDefault();
     if(this.checkErrors()){
       if(this.state.formSlice === 2){
-        this.setState({birthdate: (this.state.month + '-' +
-                                  this.state.day + '-' +
+        this.setState({birthdate: (this.state.day + '-' +
+                                  this.state.month + '-' +
                                   this.state.year)},
                       () => this.props.signUp(this.state).then(null));
       }
