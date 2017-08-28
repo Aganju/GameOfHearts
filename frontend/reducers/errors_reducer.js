@@ -1,4 +1,5 @@
-import { RECEIVE_USER_ERRORS } from '../actions/user_actions';
+import { RECEIVE_USER_ERRORS,
+         RECEIVE_CURRENT_USER } from '../actions/user_actions';
 import { RECEIVE_LOGIN_ERRORS } from '../actions/session_actions';
 
 import { merge } from 'lodash';
@@ -14,6 +15,8 @@ const ErrorsReducer = (state = defaultErrors , action) => {
       return merge({}, state, { loginErrors: action.errors });
     case RECEIVE_USER_ERRORS:
       return merge({}, state, { userCreation: action.errors });
+    case RECEIVE_CURRENT_USER:
+      return defaultErrors;
     default:
       return state;
   }
