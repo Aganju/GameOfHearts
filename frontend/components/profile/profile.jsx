@@ -1,39 +1,42 @@
 import React from 'react';
+import About from './about';
 
 export default class Profile extends React.Component{
   constructor(props){
     super(props);
-    this.basics = this.props.profile.basics;
-    this.details = this.props.profile.details;
-    this.about = this.props.profile.about;
   }
-
 
   componentDidMount(){
     this.props.fetchProfile(this.props.username);
   }
 
-  aboutRenderer(title, content){
-    return (
-      <div className='about-div'></div>
-    );
-  }
-
   render(){
-    if (this.basics){
+    if (this.props.profile.basics){
+
+      this.basics = this.props.profile.basics;
+      this.details = this.props.profile.details;
       return (
-        <div id='prof-container'>
-          <div id='prof-header'>
-            <div id='prof-img'>
-              <img src={this.details.main_img_url}/>
-            </div>
-            <div id='deets'>
-              <span>{ this.basics.username }</span>
-              <span>{ this.basics.age }</span>
-              <span>{ this.basics.address }</span>
+        <div>
+          <div id='prof-container'>
+            <div id='prof-header'>
+              <div id='prof-img'>
+                <img src={this.details.main_img_url}/>
+              </div>
+              <div id='deets'>
+                <span>{ this.basics.username }</span>
+                <span>{ this.basics.age }</span>
+                <span>{ this.basics.address }</span>
+              </div>
             </div>
           </div>
+          <div className='main'>
+            <About
+              about={this.props.profile.about}
+              updateProfile={this.props.updateProfile}
+              owner = {this.props.currentUser === this.props.username}
+            />
 
+          </div>
         </div>
       );
     }
