@@ -2,9 +2,9 @@ import React from 'react';
 import { Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-export const authRoute = ({ path, component, session}) => {
+export const authRoute = ({ path, location, component, session}) => {
   if (session.username) {
-    return <Redirect to='/browse' />;
+    return location.pathname === '/' ? <Redirect to='/browse' /> : null;
   }
   else{
     return <Route path={path} component={component} />;
