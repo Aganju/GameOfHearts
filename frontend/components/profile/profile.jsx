@@ -22,7 +22,7 @@ export default class Profile extends React.Component{
             <div id='prof-header'>
               <div className='inner'>
                 <div id='prof-img'>
-                  <img src={this.details.main_img_url}/>
+                  <img src={this.basics.main_img_url}/>
                 </div>
                 <div id='deets'>
                   <h2>{ this.basics.username }</h2>
