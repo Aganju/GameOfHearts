@@ -6,13 +6,14 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.5)
+    background: rgba(17, 17, 17, 0.75);
+    z-index: 2;
   }
 
 .content{
     font-family: sans-serif;
     position: absolute;
-    top: 45px;
+    top: 80px;
     left: 35%;
     right: 35%;
     height: 300px;
@@ -21,8 +22,8 @@
     overflow: auto;
     border-radius: 4px;
     outline: none;
-    padding: 20px
-
+    padding: 20px;
+    z-index: 2;
   }
 
   #header{

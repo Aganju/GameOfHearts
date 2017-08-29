@@ -32,6 +32,11 @@
   .fa-newspaper-o{
     margin-right: 10px;
   }
+
+  &:hover{
+    color: $lighter-base-color;
+    cursor: pointer;
+  }
 }
 
 .inner {
@@ -50,6 +55,12 @@
     font-size: 35px;
     margin-bottom: 7px;
   }
+
+  &:hover{
+    background-color: $lighter-base-color;
+    cursor: pointer;
+  }
+
   span{
     padding: 5px;
   }
