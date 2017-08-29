@@ -1,34 +1,30 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import ModalContainer from '../modal/modal_container';
 import { loginUser, logoutUser } from '../../actions/session_actions';
-import Modal from 'react-modal';
 import LoginForm from './login_form';
+import { flipModal } from '../../actions/ui_actions';
 
 const mapDispatchToProps = (dispatch) => {
   return {
     login: (user) => dispatch(loginUser(user)),
-    logout: () => dispatch(logoutUser())
+    logout: () => dispatch(logoutUser()),
+    openModal: () => dispatch(flipModal()),
   };
 };
 
 const mapStateToProps = (state) => {
   return {
-    currentUser: state.session
+    currentUser: state.session,
   };
 };
 
 class Header extends React.Component{
   constructor(props){
     super(props);
-    this.state = { modalOpen: false };
 
-    this.flipModal = this.flipModal.bind(this);
     this.guestLogin = this.guestLogin.bind(this);
-  }
-
-  flipModal(){
-    this.setState({ modalOpen: !this.state.modalOpen });
   }
 
   guestLogin(){
@@ -69,27 +65,12 @@ class Header extends React.Component{
              </Link>
             <div id='signIn'>
               Have an account?
-              <button onClick={ this.flipModal }>Sign in</button>
+              <button onClick={ this.props.openModal }>Sign in</button>
               <button onClick={ this.guestLogin }>Guest login</button>
             </div>
-            <Modal
-              onClick={ this.flipModal }
-              isOpen={this.state.modalOpen}
-              onRequestClose={this.flipModal}
-              contentLabel='loginModal'
-              className={{
-                base: 'content',
-                afterOpen: 'content',
-                beforeClose: 'content'
-              }}
-              overlayClassName={{
-                base: 'overlay',
-                afterOpen: 'overlay',
-                beforeClose: 'overlay',
-              }}
-            >
+            <ModalContainer>
               <LoginForm login={ this.props.login }/>
-            </Modal>
+            </ModalContainer>
         </div>
       );
     }
