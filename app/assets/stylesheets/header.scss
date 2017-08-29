@@ -26,11 +26,30 @@
   }
 
   #header{
+    position: fixed;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: space-between;
     background-color: $base-color;
     align-items: center;
     color: white;
+    font-size: 16px;
+    font-weight: bold;
+    h1{
+      font-family: 'Breathe-Fire';
+      font-size: 60px;
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+    a{
+      margin-right: 10px;
+      &:hover{
+        cursor: pointer;
+        color: #FDC4E4;
+      }
+    }
+
     button{
       margin: 10px;
       border-radius: 3px;
@@ -38,14 +57,35 @@
       color: white;
       background: transparent;
       border: 1px solid  white;
+
+      &:hover{
+        background-color: $lightest-base-color;
+      }
+    }
+    border-bottom: 1px solid $lightest-base-color;
+
+    .header-div{
+      display: flex;
+      align-items: center;
+    }
+
+    .fa-comment{
+      margin-right: 15px;
+      font-size: 25px;
     }
 }
 
   #login-header{
     @extend #header;
     background: $landing;
-
+    border: none;
+    position: relative;
   }
+
+  .filler{
+    color: lightgray;
+  }
+
 
   #signin-form{
     display: flex;

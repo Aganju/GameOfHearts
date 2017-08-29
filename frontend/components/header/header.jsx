@@ -39,17 +39,34 @@ class Header extends React.Component{
     if(this.props.currentUser.username){
       return(
         <div id='header'>
-          <h2>Game Of Hearts </h2>
-          <h2>{this.props.currentUser.username}</h2>
-          <Link to='/profile'>Profile</Link>
-          <button onClick={ this.props.logout }>Sign out</button>
+          <div className='header-div'>
+            <Link to='/'>
+              <h1>GoH</h1>
+            </Link>
+            <Link to='/browse'>
+              <span>Browse Matches</span>
+            </Link>
+          </div>
+          <div className='header-div'>
+            <Link to='/messages'>
+              <i className="fa fa-comment" aria-hidden="true"></i>
+            </Link>
+            <Link to='/profile'>
+              <div>
+                Profile
+              </div>
+            </Link>
+            <button onClick={ this.props.logout }>Sign out</button>
+          </div>
         </div>
       );
     }
     else{
       return(
         <div id='login-header'>
-            <h2>Game Of Hearts </h2>
+            <Link to='/browse'>
+               <h1>GoH</h1>
+             </Link>
             <div id='signIn'>
               Have an account?
               <button onClick={ this.flipModal }>Sign in</button>

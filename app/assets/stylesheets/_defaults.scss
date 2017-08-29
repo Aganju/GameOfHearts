@@ -1,14 +1,25 @@
-$lightest-base-color: #F75F71;
-$lighter-base-color: #F5364C;
-$base-color: #EA031E;
-$darker-base-color: #B80016;
-$darkest-base-color: #900011;
-$landing: #FF8C5F;
+$lightest-base-color: #D04AA5;
+$lighter-base-color: #C52892;
+$base-color: #BA027E;
+$darker-base-color: #920063;
+$darkest-base-color: #73004D;
+$landing: #E45580;
 
 .errors{
   color: $base-color;
 }
 
-#root{
+html, body, #root{
+  font-family: 'Quattrocento Sans', sans-serif;
+  height: 100%;
   background-color: #FEF7F8;
+}
+
+#app{
+  min-height: 100%;
+}
+
+@font-face {
+    font-family: "Breathe-Fire";
+    src: asset-url('fonts/breathe_fire/BreatheFire.otf') format("truetype");
 }

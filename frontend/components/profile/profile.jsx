@@ -19,23 +19,27 @@ export default class Profile extends React.Component{
         <div>
           <div id='prof-container'>
             <div id='prof-header'>
-              <div id='prof-img'>
-                <img src={this.details.main_img_url}/>
-              </div>
-              <div id='deets'>
-                <span>{ this.basics.username }</span>
-                <span>{ this.basics.age }</span>
-                <span>{ this.basics.address }</span>
+              <div className='inner'>
+                <div id='prof-img'>
+                  <img src={this.details.main_img_url}/>
+                </div>
+                <div id='deets'>
+                  <h2>{ this.basics.username }</h2>
+                  <span>{ this.basics.age }</span>
+                  <span>•</span>
+                  <span>{ this.basics.address }</span>
+                </div>
               </div>
             </div>
           </div>
           <div className='main'>
-            <About
-              about={this.props.profile.about}
-              updateProfile={this.props.updateProfile}
-              owner = {this.props.currentUser === this.props.username}
-            />
-
+            <div className='inner'>
+              <About
+                about={this.props.profile.about}
+                updateProfile={this.props.updateProfile}
+                owner = {this.props.currentUser === this.props.username}
+                />
+            </div>
           </div>
         </div>
       );

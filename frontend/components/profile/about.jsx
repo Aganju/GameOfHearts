@@ -48,7 +48,7 @@ export default class About extends React.Component{
   aboutRenderer(title, contentName){
     if(this.state[contentName].status){
       return(
-        <div className='about-div'>
+        <div className='about-div edit-div'>
           <h3>{title}</h3>
           <form onSubmit={(e) => this.updateProfile(e, contentName)}>
             <textarea
@@ -68,13 +68,17 @@ export default class About extends React.Component{
     else{
       return (
         <div className='about-div'>
-          <h3>{title}</h3>
           {this.props.owner ?
           <button onClick={ (e) => this.toggleEdit(e, contentName, true)}>
-            Edit
+            <h3>{title}</h3>
+            <i className="fa fa-pencil" aria-hidden="true"></i>
           </button> :
-            null }
-          <p>{this.about[contentName]}</p>
+            <h3>{title}</h3> }
+          {
+            this.about[contentName] ?
+            <p>{this.about[contentName]}</p> :
+            <p className='filler'>I'm hungry, fill me up with writing</p>
+          }
         </div>
       );
     }
