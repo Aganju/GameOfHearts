@@ -17,6 +17,9 @@ html, body, #root{
 
 #app{
   min-height: 100%;
+  position: relative;
+  padding-bottom: 30px;
+  font-size: 17px;
 }
 
 @font-face {

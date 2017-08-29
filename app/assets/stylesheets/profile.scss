@@ -15,6 +15,16 @@
 
 }
 
+#details{
+  align-self: flex-start;
+  display: flex;
+  margin-top: 40px;
+
+  .fa-newspaper-o{
+    margin-right: 10px;
+  }
+}
+
 .inner {
   width: 1000px;
   padding-left: 60px;
@@ -41,7 +51,7 @@
 
 #about{
   width: 560px;
-  padding-top: 25px;
+  margin-top: 40px;
 
   textarea{
     background-color: white;
@@ -54,7 +64,7 @@
     margin-top: 10px;
   }
   .about-div{
-    padding-bottom: 25px;
+    margin-bottom: 60px;
     button{
       margin-bottom: 10px;
       &:hover{
