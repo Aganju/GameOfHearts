@@ -2,6 +2,7 @@ import React from 'react';
 import About from './about';
 import Detail from './detail';
 import ModalContainer from '../modal/modal_container';
+import ProfileDetailForm from './profile_detail_form';
 
 export default class Profile extends React.Component{
   constructor(props){
@@ -49,10 +50,12 @@ export default class Profile extends React.Component{
               />
             </div>
           </div>
-          <ModalContainer>
-            <div>
-              {'TESTER'}
-            </div>
+          <ModalContainer modalClassName={'profile-form-content'}>
+            <ProfileDetailForm
+              updateProfile={this.props.updateProfile}
+              profile={this.props.profile}
+              closeModal={this.props.openModal}
+            />
           </ModalContainer>
         </div>
       );

@@ -68,7 +68,7 @@ class Header extends React.Component{
               <button onClick={ this.props.openModal }>Sign in</button>
               <button onClick={ this.guestLogin }>Guest login</button>
             </div>
-            <ModalContainer>
+            <ModalContainer modalClassName='content'>
               <LoginForm login={ this.props.login }/>
             </ModalContainer>
         </div>

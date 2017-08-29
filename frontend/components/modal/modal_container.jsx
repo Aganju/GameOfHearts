@@ -15,7 +15,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
- const ModalContainer = ({ closeModal, children, modalOpen }) => {
+const ModalContainer = ({ modalClassName, closeModal, children, modalOpen }) => {
    return (
      <Modal
        onClick={  closeModal }
@@ -23,9 +23,9 @@ const mapDispatchToProps = (dispatch) => {
        onRequestClose={ closeModal }
        contentLabel='loginModal'
        className={{
-         base: 'content',
-         afterOpen: 'content',
-         beforeClose: 'content'
+         base: modalClassName,
+         afterOpen: modalClassName,
+         beforeClose: modalClassName
        }}
        overlayClassName={{
          base: 'overlay',
