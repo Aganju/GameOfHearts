@@ -1,0 +1,63 @@
+@import "defaults";
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(17, 17, 17, 0.75);
+  z-index: 2;
+}
+
+.content{
+  position: absolute;
+  top: 80px;
+  left: 35%;
+  right: 35%;
+  height: 300px;
+  width: 300px;
+  border: 1px solid #ccc;
+  background: rgb(243, 245, 249);
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+  z-index: 2;
+
+  input, select{
+    background: white;
+    margin: 10px;
+    margin-left: 0px;
+    height: 46px;
+    width: 200px;
+    border-radius: 3px;
+    color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid gray;
+
+    &:focus{
+      border-color: $base-color;
+    }
+  }
+
+  button{
+    background: $base-color;
+    margin: 10px;
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    &:hover{
+      background: $lighter-base-color;
+    }
+  }
+}
+
+.profile-form-content{
+  @extend .content;
+  height: 650px;
+  width: 500px;
+}

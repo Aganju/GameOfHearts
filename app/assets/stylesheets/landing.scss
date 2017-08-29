@@ -36,7 +36,7 @@
   background-color: $landing;
   // background-image: image-url('khaleesi.jpg');
   display: flex;
-
+  padding-left: 400px;
   .errors{
     display: flex;
     flex-direction: column;
@@ -119,11 +119,12 @@
 }
 .about{
   display: flex;
+  padding-top: 150px;
+  justify-content: center;
 }
 .splash-info-div{
   padding-top: 50px;
   padding: 20px;
-  width: 32%;
   height: 350px;
   text-align: center;
   font-size: 20px;

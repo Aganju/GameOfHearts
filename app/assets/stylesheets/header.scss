@@ -1,126 +1,102 @@
 @import "defaults";
 
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(17, 17, 17, 0.75);
-    z-index: 2;
+#header{
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  background-color: $base-color;
+  align-items: center;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  h1{
+    font-family: 'Breathe-Fire';
+    font-size: 60px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  a{
+    margin-right: 10px;
+    &:hover{
+      cursor: pointer;
+      color: #FDC4E4;
+    }
   }
 
-.content{
-    font-family: sans-serif;
-    position: absolute;
-    top: 80px;
-    left: 35%;
-    right: 35%;
-    height: 300px;
-    border: 1px solid #ccc;
-    background: rgb(243, 245, 249);
-    overflow: auto;
-    border-radius: 4px;
-    outline: none;
-    padding: 20px;
-    z-index: 2;
-  }
-
-  #header{
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: space-between;
-    background-color: $base-color;
-    align-items: center;
+  button{
+    margin: 10px;
+    border-radius: 3px;
+    padding: 10px;
     color: white;
-    font-size: 16px;
-    font-weight: bold;
-    h1{
-      font-family: 'Breathe-Fire';
-      font-size: 60px;
-      margin-left: 15px;
-      margin-right: 15px;
-    }
-    a{
-      margin-right: 10px;
-      &:hover{
-        cursor: pointer;
-        color: #FDC4E4;
-      }
-    }
+    background: transparent;
+    border: 1px solid  white;
 
-    button{
-      margin: 10px;
-      border-radius: 3px;
-      padding: 10px;
-      color: white;
-      background: transparent;
-      border: 1px solid  white;
-
-      &:hover{
-        background-color: $lightest-base-color;
-      }
+    &:hover{
+      background-color: $lightest-base-color;
     }
-    border-bottom: 1px solid $lightest-base-color;
+  }
+  border-bottom: 1px solid $lightest-base-color;
 
-    .header-div{
-      display: flex;
-      align-items: center;
-    }
+  .header-div{
+    display: flex;
+    align-items: center;
+  }
 
-    .fa-comment{
-      margin-right: 15px;
-      font-size: 25px;
-    }
+  .fa-comment{
+    margin-right: 15px;
+    font-size: 25px;
+  }
 }
 
-  #login-header{
-    @extend #header;
-    background: $landing;
-    border: none;
-    position: relative;
+#login-header{
+  @extend #header;
+  background: $landing;
+  border: none;
+  position: relative;
+  padding-left: 400px;
+  padding-right: 400px;
+}
+
+.filler{
+  color: lightgray;
+}
+
+
+#signin-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+  h2{
+    font-size: 25px;
+  }
+  input{
+    background: white;
+    margin: 10px;
+    margin-left: 0px;
+    height: 46px;
+    width: 200px;
+    border-radius: 3px;
+    color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid gray;
   }
 
-  .filler{
-    color: lightgray;
-  }
-
-
-  #signin-form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-
-    h2{
-      font-size: 25px;
-    }
-    input{
-      background: white;
-      margin: 10px;
-      margin-left: 0px;
-      height: 46px;
-      width: 200px;
-      border-radius: 3px;
-      color: black;
-      padding-left: 10px;
-      padding-right: 10px;
-      border: 1px solid gray;
-    }
-
-    button{
-      background: $base-color;
-      margin: 10px;
-      width: 200px;
-      height: 50px;
-      border-radius: 5px;
-      text-align: center;
-      color: white;
-      &:hover{
-        background: $lighter-base-color;
-      }
+  button{
+    background: $base-color;
+    margin: 10px;
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    &:hover{
+      background: $lighter-base-color;
     }
   }
+}
