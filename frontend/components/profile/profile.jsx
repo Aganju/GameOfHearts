@@ -1,6 +1,7 @@
 import React from 'react';
 import About from './about';
 import Detail from './detail';
+import ModalContainer from '../modal/modal_container';
 
 export default class Profile extends React.Component{
   constructor(props){
@@ -24,7 +25,7 @@ export default class Profile extends React.Component{
                 <div id='prof-img'>
                   <img src={this.basics.main_img_url}/>
                 </div>
-                <div id='deets'>
+                <div id='deets' onClick={this.props.openModal}>
                   <h2>{ this.basics.username }</h2>
                   <span>{ this.basics.age }</span>
                   <span>•</span>
@@ -41,12 +42,18 @@ export default class Profile extends React.Component{
                 owner = {this.props.currentUser === this.props.username}
                 />
               <Detail
+                openModal={this.props.openModal}
                 details={this.props.profile.details}
                 updateProfile={this.props.updateProfile}
                 owner = {this.props.currentUser === this.props.username}
               />
             </div>
           </div>
+          <ModalContainer>
+            <div>
+              {'TESTER'}
+            </div>
+          </ModalContainer>
         </div>
       );
     }

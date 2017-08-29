@@ -19,7 +19,7 @@ export default class About extends React.Component{
     this.detailsCombiner(combinedDetails, 'height');
     this.detailsCombiner(combinedDetails, 'body-type');
     return (
-      <div id='details'>
+      <div id='details' onClick={this.props.openModal}>
         <i className="fa fa-newspaper-o" aria-hidden="true"></i>
         <p>{combinedDetails.join(', ')}</p>
       </div>
