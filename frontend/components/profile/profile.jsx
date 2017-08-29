@@ -1,5 +1,6 @@
 import React from 'react';
 import About from './about';
+import Detail from './detail';
 
 export default class Profile extends React.Component{
   constructor(props){
@@ -39,6 +40,11 @@ export default class Profile extends React.Component{
                 updateProfile={this.props.updateProfile}
                 owner = {this.props.currentUser === this.props.username}
                 />
+              <Detail
+                details={this.props.profile.details}
+                updateProfile={this.props.updateProfile}
+                owner = {this.props.currentUser === this.props.username}
+              />
             </div>
           </div>
         </div>
