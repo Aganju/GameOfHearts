@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form, Text, Select } from 'react-form';
+import { merge } from 'lodash';
 
 class ProfileDetailForm extends React.Component{
   constructor(props){
@@ -29,15 +30,21 @@ class ProfileDetailForm extends React.Component{
     return (
       <Form
         onSubmit={(values) => {
-          debugger;
+          const updatedProfile = merge({}, values);
+          updatedProfile.height = values.feet * 12 + values.inches;
+          delete updatedProfile.feet;
+          delete updatedProfile.inches;
+          this.updateProfile(updatedProfile);
+          this.closeModal();
         }}
 
         defaultValues={{
           orientation: this.profile.details.orientation,
           gender: this.profile.details.gender,
-          status: this.profile.details.status,
-          relationship_type: this.profile.details.relationship_type,
-          height: this.profile.details.height,
+          rel_type: this.profile.details.rel_type,
+          rel_status: this.profile.details.rel_status,
+          feet: Math.floor(this.profile.details.height / 12),
+          inches: this.profile.details.height % 12,
           body_type: this.profile.details.body_type,
         }}
       >
@@ -79,7 +86,7 @@ class ProfileDetailForm extends React.Component{
                 <h5>Status</h5>
                 <div>
                   <Select
-                    field='status'
+                    field='rel_status'
                     options={[
                       { label: '___' , value: null },
                       { label: 'Single', value: 'Single' },
@@ -94,7 +101,7 @@ class ProfileDetailForm extends React.Component{
                 <h5>Relationship Type</h5>
                 <div>
                   <Select
-                    field='relationship_type'
+                    field='rel_type'
                     options={[
                       { label: '___' , value: null },
                       { label: 'Monogamous', value: 'Monogamous' },
