@@ -74,29 +74,4 @@
   h2{
     font-size: 25px;
   }
-  input{
-    background: white;
-    margin: 10px;
-    margin-left: 0px;
-    height: 46px;
-    width: 200px;
-    border-radius: 3px;
-    color: black;
-    padding-left: 10px;
-    padding-right: 10px;
-    border: 1px solid gray;
-  }
-
-  button{
-    background: $base-color;
-    margin: 10px;
-    width: 200px;
-    height: 50px;
-    border-radius: 5px;
-    text-align: center;
-    color: white;
-    &:hover{
-      background: $lighter-base-color;
-    }
-  }
 }

@@ -45,13 +45,13 @@ class ProfileDetailForm extends React.Component{
           return (
             <form onSubmit={ submitForm }>
               <h3>Basics</h3>
-              <div>
-                <img src={this.state.imgPreviewUrl}/>
+              <div id='img-input'>
                   <input
                     type="file"
                     accept="image/*"
                     onChange={this.handleFileChange}
                   />
+                <img src={this.state.imgPreviewUrl}/>
               </div>
               <div id='iama'>
                 <h5>I am a...</h5>

@@ -24,6 +24,7 @@
   outline: none;
   padding: 20px;
   z-index: 2;
+  font-family: 'Quattrocento Sans', sans-serif;
 
   input, select{
     background: white;
@@ -58,6 +59,6 @@
 
 .profile-form-content{
   @extend .content;
-  height: 650px;
+  height: 670px;
   width: 500px;
 }

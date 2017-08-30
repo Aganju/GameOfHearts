@@ -9,6 +9,17 @@
     display: flex;
     flex-direction: column;
 
+    img{
+      margin-left: 40px;
+      width: 100px;
+      height: auto;
+    }
+
+    #img-input{
+      display: flex;
+      align-items: center;
+    }
+
     #iama{
       display: flex;
       flex-direction: column;
@@ -24,8 +35,6 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-
-      
       }
 
       div{
