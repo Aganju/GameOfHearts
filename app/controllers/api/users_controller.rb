@@ -41,7 +41,7 @@ class Api::UsersController < ApplicationController
   def detail_params
     params.require(:user).permit(:birthdate, :gender, :zipcode,
                                  :orientation, :height, :body_type,
-                                 :main_img)
+                                 :rel_type, :rel_status, :main_img)
   end
 
   def profile_params
