@@ -16,7 +16,6 @@ export default class About extends React.Component{
       thoughts: { status: false, text: ''},
     };
 
-    this.about = this.props.about;
     this.toggleEdit = this.toggleEdit.bind(this);
     this.updateProfile = this.updateProfile.bind(this);
     this.inputChange = this.inputChange.bind(this);
@@ -24,7 +23,7 @@ export default class About extends React.Component{
 
   toggleEdit(e, section, status){
     e.preventDefault();
-    this.setState({ [section]: { status, text: this.about[section] } });
+    this.setState({ [section]: { status, text: this.props.about[section] } });
   }
 
   updateProfile(e, contentName){
@@ -75,8 +74,8 @@ export default class About extends React.Component{
           </button> :
             <h3>{title}</h3> }
           {
-            this.about[contentName] ?
-            <p>{this.about[contentName]}</p> :
+            this.props.about[contentName] ?
+            <p>{this.props.about[contentName]}</p> :
             <p className='filler'>I'm hungry, fill me up with writing</p>
           }
         </div>
