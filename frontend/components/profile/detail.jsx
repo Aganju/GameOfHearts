@@ -1,13 +1,13 @@
 import React from 'react';
 
-export default class About extends React.Component{
+export default class Detail extends React.Component{
   constructor(props){
     super(props);
     this.details = this.props.details;
   }
 
   detailsCombiner(arr, contentName){
-    let content = this.details[contentName];
+    let content = this.props.details[contentName];
     if(content){
       if (contentName === 'height'){
         content = Math.floor(content/12) +"' " +content % 12 + "\"";
