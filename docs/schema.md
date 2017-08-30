@@ -54,14 +54,14 @@ column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
 question_id     | integer   | not null, indexed, foreign_key
-answer_text    | string    | not null
+answer_text     | string    | not null
 
 ## questions_answers
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-user_id         | integer   | not null, indexed, unique, foreign key
-answer_id       | id        | not null, indexed, foreign_key
+user_id         | integer   | not null, indexed, foreign key(unique in context of question)
+answer_id       | id        | not null, foreign_key
 
 ## conversations
 column name     | data type | details
