@@ -5,7 +5,7 @@ class Detail < ActiveRecord::Base
     message: 'is not located in westeros(try a US zipcode)'
   }
 
-  has_attached_file :main_img
+  has_attached_file :main_img, default_url: "missing.jpg"
   validates_attachment_content_type :main_img, content_type: /\Aimage\/.*\Z/
 
   before_validation :geocode, :reverse_geocode
