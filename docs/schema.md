@@ -38,7 +38,9 @@ longitude       | float     | not null, indexed
 address         | string    | not null
 main_img        |attatchment|
 orientation     | string    |
-height          | string    |
+rel_type        | string    |
+rel_status      | string    |
+height          | integer   |
 body_type       | string    |
 
 ## questions
@@ -46,15 +48,20 @@ column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
 question_text   | string    | not null
-answers         | array     | not null
+
+## answers
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+question_id     | integer   | not null, indexed, foreign_key
+answer_text    | string    | not null
 
 ## questions_answers
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
 user_id         | integer   | not null, indexed, unique, foreign key
-question_id     | integer   | not null, indexed, foreign_key
-answer_index    | index     | not null
+answer_id       | id        | not null, indexed, foreign_key
 
 ## conversations
 column name     | data type | details
