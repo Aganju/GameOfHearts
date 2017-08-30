@@ -51,3 +51,10 @@ export const updateProfile = (profile) => (dispatch) => {
     (errorRes) => dispatch(receiveUserErrors({server: errorRes.responseJSON}))
   );
 };
+
+export const updateProfileImage = (profileImage) => (dispatch) => {
+  return UsersUtil.updateProfileImage(profileImage)
+    .then( (updatedProfile) => dispatch(receiveCurrentProfile (updatedProfile)),
+    (errorRes) => dispatch(receiveUserErrors({server: errorRes.responseJSON}))
+  );
+};

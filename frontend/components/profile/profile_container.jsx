@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { fetchProfile, updateProfile } from '../../actions/user_actions';
+import { fetchProfile, updateProfile,
+         updateProfileImage } from '../../actions/user_actions';
 import { flipModal } from '../../actions/ui_actions';
 import Profile from './profile';
 
@@ -16,6 +17,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     updateProfile: (updates) => dispatch(updateProfile(updates)),
+    updateProfileImage: (imgForm) => dispatch(updateProfileImage(imgForm)),
     fetchProfile: (username) => dispatch(fetchProfile(username)),
     openModal: () => dispatch(flipModal()),
   };

@@ -20,3 +20,13 @@ export const updateProfile = (profile) => {
       data: { user: profile },
   });
 };
+
+export const updateProfileImage = (profileImage) => {
+  return $.ajax({
+      url: '/api/users/update',
+      method: 'PATCH',
+      processData: false,
+      contentType: false,
+      data: profileImage,
+  });
+};

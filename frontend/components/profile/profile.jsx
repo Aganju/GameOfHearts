@@ -53,6 +53,7 @@ export default class Profile extends React.Component{
           <ModalContainer modalClassName={'profile-form-content'}>
             <ProfileDetailForm
               updateProfile={this.props.updateProfile}
+              updateProfileImage={this.props.updateProfileImage}
               profile={this.props.profile}
               closeModal={this.props.openModal}
             />

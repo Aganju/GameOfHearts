@@ -31,6 +31,11 @@ class ProfileDetailForm extends React.Component{
       <Form
         onSubmit={(values) => {
           const updatedProfile = merge({}, values);
+          if(this.state.imgFile){
+            const formData = new FormData();
+            formData.append("user[main_img]", this.state.imgFile);
+            this.props.updateProfileImage(formData);
+          }
           updatedProfile.height = values.feet * 12 + values.inches;
           delete updatedProfile.feet;
           delete updatedProfile.inches;
