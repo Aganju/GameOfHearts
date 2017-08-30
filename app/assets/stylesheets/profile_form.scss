@@ -9,6 +9,10 @@
     display: flex;
     flex-direction: column;
 
+    input[type="file"]{
+      width: 250px;
+    }
+    
     img{
       margin-left: 40px;
       width: 100px;

@@ -6,7 +6,7 @@ $darkest-base-color: #73004D;
 $landing: #E45580;
 
 .errors{
-  color: $base-color;
+  color: $darkest-base-color;
 }
 
 html, body, #root{
@@ -18,7 +18,9 @@ html, body, #root{
   min-height: 100%;
   position: relative;
   padding-bottom: 70px;
-  font-size: 17px;
+  font-size: 18px;
+  line-height: 25px;
+  min-width: 1000px;
 }
 
 @font-face {

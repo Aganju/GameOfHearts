@@ -18,16 +18,19 @@
   h1{
     font-weight: bold;
     font-size: 60px;
+    line-height: 70px;
   }
   i{
     font-style: italic;
   }
   h2{
     font-size: 30px;
+    line-height: 35px;
     margin-bottom: 20px;
   }
   h3{
     font-size: 24px;
+    line-height: 35px;
     font-weight: 100;
   }
 }
@@ -36,7 +39,9 @@
   background-color: $landing;
   // background-image: image-url('khaleesi.jpg');
   display: flex;
-  padding-left: 400px;
+  padding-left: 25%;
+  padding-right: 25%;
+  min-width: 875px;
   .errors{
     display: flex;
     flex-direction: column;
