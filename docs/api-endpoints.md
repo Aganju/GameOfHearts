@@ -27,7 +27,8 @@
 
 ### Questions
  - 'GET /api/questions' all questions and answers for current user
- - 'GET /api/questions/:user_id' return questions for other user
+ - 'GET /api/questions/new' list of unanswered questions for current user
  - 'POST /api/questions/' answer new question
+ - 'GET /api/questions/:user_id' return questions and answers for other user
  - 'PATCH /api/questions/:id' update question answer
  - 'DELETE /api/questions/:id' delete question answer
