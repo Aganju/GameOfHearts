@@ -19,28 +19,28 @@ export const receiveQuestionAnswers = (answers, userId) => {
   };
 };
 
-export const removeQuestionAnswer = (answerId) => {
+export const removeQuestionAnswer = (answer) => {
   return {
     type: REMOVE_QUESTION_ANSWER,
-    answerId: answerId
+    deletedAnswer: answer,
   };
 };
 
 export const fetchUnansweredQuestions = () => (dispatch) => {
   return QuestionsUtil.getUnansweredQuestions()
-    .then( (questions) => dispatch(receiveQuestions(questions)));
+    .then( (res) => dispatch(receiveQuestions(res.questions)));
 };
 
 export const answerQuestion = (answerId) => (dispatch, getState) => {
   return QuestionsUtil.createAnswer(answerId)
-    .then( (answers) => dispatch(receiveQuestionAnswers(answers,
+    .then( (res) => dispatch(receiveQuestionAnswers(res.answers,
                                                       getState().session.id)));
 };
 
 export const updateQuestionAnswer = (questionAnswerId, newAnswerId) =>
                                     (dispatch, getState) => {
   return QuestionsUtil.updateAnswer(questionAnswerId, newAnswerId)
-    .then( (answers) => dispatch(receiveQuestionAnswers(answers,
+    .then( (res) => dispatch(receiveQuestionAnswers(res.answers,
                                                       getState().session.id)));
 };
 
@@ -54,5 +54,5 @@ export const fetchUserQuestions = (userId) => (dispatch) => {
 
 export const deleteQuestionAnswer = (answerId) => (dispatch, getState) => {
   return QuestionsUtil.deleteAnswer(answerId)
-    .then( (answers) => dispatch(deleteQuestionAnswer(answerId)));
+    .then( (res) => dispatch(removeQuestionAnswer(res.answers[0])));
 };
