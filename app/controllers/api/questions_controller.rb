@@ -15,10 +15,6 @@ class Api::QuestionsController < ApplicationController
     user = User.find(params[:id])
     @questions = user.questions.includes(:answer_choices)
     @question_answers = user.question_answers
-    unless current_user == user
-      @questions += current_user.questions.includes(:answer_choices)
-      @question_answers += current_user.question_answers
-    end
     render :show
   end
 
