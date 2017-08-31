@@ -8,6 +8,9 @@ class User < ActiveRecord::Base
 
   has_one :profile, dependent: :destroy, autosave: true
   has_one :detail, dependent: :destroy, autosave: true
+  has_many :question_answers
+  has_many :questions, through: :question_answers
+  has_many :answers, through: :question_answers
 
   def ensure_session_token
     self.session_token ||= User.generate_session_token
