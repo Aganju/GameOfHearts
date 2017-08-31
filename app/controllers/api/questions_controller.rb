@@ -30,8 +30,7 @@ class Api::QuestionsController < ApplicationController
   end
 
   def destroy
-    QuestionAnswer.find(params[:id]).delete
-    @question_answers = current_user.question_answers
+    @question_answers = [ QuestionAnswer.find(params[:id]).delete ]
     render 'api/questions/_question_answers'
   end
 
