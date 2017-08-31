@@ -2,7 +2,6 @@ import * as UsersUtil from '../utils/users_util';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_USERS = 'RECEIVE_USERS';
-export const RECEIVE_PROFILE = 'RECEIVE_PROFILE';
 export const RECEIVE_CURRENT_PROFILE = 'RECEIVE_CURRENT_PROFILE';
 export const RECEIVE_USER_ERRORS = 'RECEIVE_USER_ERRORS';
 
