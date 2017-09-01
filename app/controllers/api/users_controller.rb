@@ -1,4 +1,9 @@
 class Api::UsersController < ApplicationController
+
+  def index
+    @details = Detail.all.includes(:user)
+  end
+
   def create
     @user = User.new(user_params)
     @user.detail = Detail.new(detail_params)

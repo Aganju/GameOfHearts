@@ -30,6 +30,13 @@ export const receiveUsers = (users) => {
   };
 };
 
+export const fetchUsers = (prefs) => (dispatch) => {
+  return UsersUtil.getUsers(prefs)
+    .then( (users) => dispatch(receiveUsers(users)),
+    (errorRes) => dispatch(receiveUserErrors({server: errorRes.responseJSON}))
+  );
+};
+
 export const createUser = (user) => (dispatch) => {
   return UsersUtil.createUser(user)
     .then( (currentUser) => dispatch(receiveCurrentUser(currentUser)),
