@@ -31,7 +31,7 @@ class UnansweredQuestions extends React.Component {
   }
 
   questionAnswered(){
-    if(this.questionIndex + 1 === this.questionsList.length){
+    if(this.state.questionIndex + 1 === this.questionsList.length){
       this.props.getUnansweredQuestions();
     }
     else{

@@ -28,7 +28,7 @@ class Header extends React.Component{
   }
 
   guestLogin(){
-    this.props.login({username: 'Cupid', password: 'password'});
+    this.props.login({username: 'JonSnow', password: 'password'});
   }
 
   render(){

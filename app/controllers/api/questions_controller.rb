@@ -8,7 +8,8 @@ class Api::QuestionsController < ApplicationController
   def create
     @question_answers = current_user.question_answers
     @question_answers << QuestionAnswer.new(question_params)
-    render 'api/questions/_question_answers'
+    @questions = current_user.questions.includes(:answer_choices)
+    render :show
   end
 
   def show
