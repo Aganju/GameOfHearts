@@ -5,6 +5,7 @@ import Footer from './footer/footer';
 import { AuthRoute, ProtectedRoute } from '../utils/route_util';
 import LandingContainer from './landing/landing_container';
 import ProfileContainer from './profile/profile_container';
+import Browse from './browse/browse';
 
 const App = () => (
   <div id='app'>
@@ -12,6 +13,7 @@ const App = () => (
       <div id='main-content'>
         <AuthRoute path='/' component={LandingContainer} />
         <Switch>
+          <ProtectedRoute path='/browse' component={Browse} />
           <ProtectedRoute path='/profile/:username' component={ProfileContainer} />
           <ProtectedRoute path='/profile' component={ ProfileContainer } />
           <ProtectedRoute path='/' render={() => ''}/>

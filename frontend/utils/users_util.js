@@ -1,3 +1,11 @@
+export const getUsers = (preferences) => {
+  return $.ajax({
+  	url: '/api/users',
+	  method: 'GET',
+	  data: { user: preferences }
+  });
+};
+
 export const createUser = (user) => {
   return $.ajax({
   	url: '/api/users',
