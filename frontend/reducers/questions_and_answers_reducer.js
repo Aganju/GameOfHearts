@@ -1,16 +1,25 @@
 import { RECEIVE_QUESTIONS, RECEIVE_QUESTION_ANSWERS,
-         REMOVE_QUESTION_ANSWER } from '../actions/question_actions';
+         REMOVE_QUESTION_ANSWER,
+         RECEIVE_UNANSWERED_QUESTIONS } from '../actions/question_actions';
 import { merge } from 'lodash';
 
-const defaultState = {questions: {}, answers: {} };
+const defaultState = {questions: {}, answers: {}, unAnsweredQuestions: {} };
 
 const QuestionsAndAnswersReducer = (state = defaultState, action ) => {
   let newState;
   switch (action.type) {
     case RECEIVE_QUESTIONS:
-      newState = merge({}, state);
+      newState = merge({ }, state);
+      newState.questions = {};
       action.questions.forEach((question) => {
         newState.questions[question.id] = question;
+      });
+      return newState;
+    case RECEIVE_UNANSWERED_QUESTIONS:
+      newState = merge({ }, state);
+      newState.unAnsweredQuestions = {};
+      action.questions.forEach((question) => {
+        newState.unAnsweredQuestions[question.id] = question;
       });
       return newState;
     case RECEIVE_QUESTION_ANSWERS:

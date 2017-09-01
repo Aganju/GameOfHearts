@@ -1,12 +1,20 @@
 import * as QuestionsUtil from '../utils/questions_util';
 
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS';
+export const RECEIVE_UNANSWERED_QUESTIONS = 'RECEIVE_UNANSWERED_QUESTIONS';
 export const RECEIVE_QUESTION_ANSWERS = 'RECEIVE_QUESTION_ANSWERS';
 export const REMOVE_QUESTION_ANSWER = 'REMOVE_QUESTION_ANSWER';
 
 export const receiveQuestions = (questions) => {
   return {
     type: RECEIVE_QUESTIONS,
+    questions: questions
+  };
+};
+
+export const receiveUnansweredQuestions = (questions) => {
+  return {
+    type: RECEIVE_UNANSWERED_QUESTIONS,
     questions: questions
   };
 };
@@ -28,7 +36,7 @@ export const removeQuestionAnswer = (answer) => {
 
 export const fetchUnansweredQuestions = () => (dispatch) => {
   return QuestionsUtil.getUnansweredQuestions()
-    .then( (res) => dispatch(receiveQuestions(res.questions)));
+    .then( (res) => dispatch(receiveUnansweredQuestions(res.questions)));
 };
 
 export const answerQuestion = (answerId) => (dispatch, getState) => {
