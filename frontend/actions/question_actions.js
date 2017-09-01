@@ -41,8 +41,10 @@ export const fetchUnansweredQuestions = () => (dispatch) => {
 
 export const answerQuestion = (answerId) => (dispatch, getState) => {
   return QuestionsUtil.createAnswer(answerId)
-    .then( (res) => dispatch(receiveQuestionAnswers(res.answers,
-                                                      getState().session.id)));
+    .then( (questionsAndAnswers) => {
+      dispatch(receiveQuestions(questionsAndAnswers.questions));
+      dispatch(receiveQuestionAnswers(questionsAndAnswers.answers, getState().session.id));
+    });
 };
 
 export const updateQuestionAnswer = (questionAnswerId, newAnswerId) =>
