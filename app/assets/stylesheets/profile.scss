@@ -68,7 +68,21 @@
 
 .main{
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#question-splash{
+  margin-top: 30px;
+  width: 1000px;
+  display: flex;
+
+  a{
+    font-size: 25px;
+    color: $base-color;
+    text-decoration: underline;
+    margin-bottom: 35px; 
+  }
 }
 
 #about{
