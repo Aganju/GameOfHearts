@@ -41,6 +41,7 @@ class Browse extends React.Component {
                     <span>•</span>
                     <span>{user.address}</span>
                   </div>
+                  <div><h2>{`${user.fave_percent}% Match`}</h2></div>
                 </div>
               </div>
             );

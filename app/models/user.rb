@@ -40,4 +40,16 @@ class User < ActiveRecord::Base
     self.password_digest = BCrypt::Password.create(password)
   end
 
+  def favorite_rating(match)
+    base_match = 50
+    shared_questions = self.questions & match.questions
+    user_answers = self.answers.index_by(&:question_id)
+    match_answers = match.answers.index_by(&:question_id)
+
+    answer_matches = shared_questions.map do |question|
+      user_answers[question.id] == match_answers[question.id] ? 100 : 20
+    end
+    answer_matches << base_match
+    answer_matches.sum / answer_matches.length
+  end
 end

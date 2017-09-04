@@ -40,10 +40,13 @@ class UnansweredQuestions extends React.Component {
   }
 
   componentWillReceiveProps(newProps){
-    this.questionsList = Object.keys(newProps.unAnsweredQuestions).map(
-      (questionId) => newProps.unAnsweredQuestions[questionId]
-    );
-    this.setState({questionIndex: 0});
+    if(Object.keys(newProps.unAnsweredQuestions)[0]
+          !== Object.keys(this.props.unAnsweredQuestions)[0]){
+      this.questionsList = Object.keys(newProps.unAnsweredQuestions).map(
+        (questionId) => newProps.unAnsweredQuestions[questionId]
+      );
+      this.setState({questionIndex: 0});
+    }
   }
 
   render(){

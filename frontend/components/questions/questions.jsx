@@ -40,7 +40,8 @@ export default class Questions extends React.Component {
           { this.owner ? <UnansweredQuestions />  : null}
           <div id='questions-list'>
             { Object.keys(this.props.questions).map((questionId) => {
-              if(this.props.answers[this.props.currentUserId][questionId])
+              if(this.props.answers[this.props.currentUserId] &&
+                    this.props.answers[this.props.currentUserId][questionId])
               return <AnsweredQuestion
                 question={this.props.questions[questionId]}
                 userImage={this.props.currentUserImg}
