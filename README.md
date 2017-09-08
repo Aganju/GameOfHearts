@@ -1,6 +1,6 @@
 # GameOfHearts
 
-[GOHearts live](https://www.google.com "Game Of Hearts live")
+[GOHearts live](http://www.game-of-hearts.com "Game Of Hearts live")
 
 GameOfHearts is a game of thrones themed take on the dating website genre.
 It is a full-stack web application created using PostgreSQL as the database foundation,
