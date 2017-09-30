@@ -2,6 +2,16 @@ class Api::UsersController < ApplicationController
 
   def index
     @details = Detail.all.includes(:user)
+    if params[:user]
+      s_params = search_params
+      s_params[:min_age] = s_params[:min_age].to_i.years.ago
+      s_params[:max_age] = s_params[:max_age].to_i.years.ago
+      @details = current_user.detail
+        .nearbys(s_params[:distance])
+        .where('gender = :gender AND orientation = :orientation AND
+                birthdate >= :max_age AND birthdate <= :min_age', s_params)
+        .includes(:user)
+    end
   end
 
   def create
@@ -53,5 +63,10 @@ class Api::UsersController < ApplicationController
     params.require(:user).permit(:summary, :six_things, :my_life,
                                  :msg_me_if, :good_at, :faves, :private,
                                  :friday_night, :thoughts, :first_thing)
+  end
+
+  def search_params
+    params.require(:user).permit(:gender, :orientation,
+                                 :min_age, :max_age, :distance)
   end
 end
