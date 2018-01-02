@@ -10,7 +10,6 @@ const QuestionsAndAnswersReducer = (state = defaultState, action ) => {
   switch (action.type) {
     case RECEIVE_QUESTIONS:
       newState = merge({ }, state);
-      newState.questions = {};
       action.questions.forEach((question) => {
         newState.questions[question.id] = question;
       });
