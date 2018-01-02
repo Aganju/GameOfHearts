@@ -40,10 +40,13 @@ export default class Questions extends React.Component {
           { this.owner ? <UnansweredQuestions />  : null}
           <div id='questions-list'>
             { Object.keys(this.props.questions).map((questionId) => {
-              if(this.props.answers[this.props.currentUserId] &&
-                    this.props.answers[this.props.currentUserId][questionId])
+              //true in 2 scenarios:
+              //1: user looking at own questions page, and has answered question
+              //2: user looking at other persons questions page and they have answered question
+              if(this.props.answers[this.props.basics.id][questionId])
               return <AnsweredQuestion
                 key={questionId}
+                sameUser={this.props.currentUserId === this.props.basics.id}
                 question={this.props.questions[questionId]}
                 userImage={this.props.currentUserImg}
                 otherUserImage={this.props.basics.main_img_url}

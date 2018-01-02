@@ -10,8 +10,12 @@ class AnsweredQuestion extends React.Component{
     this.question = this.props.question;
     this.userImage = this.props.userImage;
     this.otherUserImage = this.props.otherUserImage;
-    this.userAnswerID = this.props.userQuestionAnswer.answer_id;
     this.otherUserAnswerID = this.props.otherUserAnswerID;
+
+    if (this.props.userQuestionAnswer ){
+      this.state.userAnswered = true;
+      this.userAnswerID = this.props.userQuestionAnswer.answer_id;
+    }
 
     this.questionChoiceObject = {};
     this.question.answerChoices.forEach((choice) => {
@@ -25,13 +29,14 @@ class AnsweredQuestion extends React.Component{
               question={this.question}
               questionAnswer={this.props.userQuestionAnswer}
               complete={(newAnswerId)=> {
+                this.userAnswered = true;
                 this.userAnswerID= newAnswerId;
-                this.setState({edit: false});
+                this.setState({edit: false, userAnswered: true});
               }}
             />;
     }
 
-    if(this.otherUserImage === this.userImage){
+    if(this.props.sameUser){
       return(
         <div className='question'>
           <h3>{this.question.question_text}</h3>
@@ -53,7 +58,7 @@ class AnsweredQuestion extends React.Component{
         </div>
       );
     }
-    else{
+    else if(this.state.userAnswered){
       return(
         <div className='question'>
           <h3>{ this.question.question_text }</h3>
@@ -68,6 +73,16 @@ class AnsweredQuestion extends React.Component{
           <div className='edit-button'>
             <button onClick={() => this.setState({edit: true})}>edit</button>
           </div>
+        </div>
+      );
+    }
+    else{
+      return(
+        <div className='question'>
+          <h3>{ this.question.question_text }</h3>
+            <div className='edit-button'>
+              <button onClick={() => this.setState({edit: true})}>Answer</button>
+            </div>
         </div>
       );
     }
