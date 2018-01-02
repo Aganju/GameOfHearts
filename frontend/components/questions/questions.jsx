@@ -43,6 +43,7 @@ export default class Questions extends React.Component {
               if(this.props.answers[this.props.currentUserId] &&
                     this.props.answers[this.props.currentUserId][questionId])
               return <AnsweredQuestion
+                key={questionId}
                 question={this.props.questions[questionId]}
                 userImage={this.props.currentUserImg}
                 otherUserImage={this.props.basics.main_img_url}

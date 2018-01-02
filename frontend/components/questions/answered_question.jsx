@@ -38,11 +38,11 @@ class AnsweredQuestion extends React.Component{
           <ul>
             { this.question.answerChoices.map((choice) => {
               return choice.id === this.userAnswerID ?
-              <li className='selected question-answer'>
+              <li key={choice.id} className='selected question-answer'>
                 <i className="fa fa-check" aria-hidden="true"></i>
                 {choice.answer_text}
               </li> :
-              <li className='question-answer'>
+              <li key={choice.id} className='question-answer'>
                 {choice.answer_text}
               </li >;
             }) }
