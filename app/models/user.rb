@@ -12,6 +12,24 @@ class User < ActiveRecord::Base
   has_many :questions, through: :question_answers
   has_many :answers, through: :question_answers
 
+  # associating users with itself through conversations and accounting for
+  # both possibile columns in which the id can exist in conversations
+  has_many :started_conversations,
+           foreign_key: :first_user_id,
+           class_name: :Conversation
+
+  has_many :messaged_users,
+           through: :started_conversations,
+           source: :second_user
+
+  has_many :received_conversations,
+           foreign_key: :second_user_id,
+           class_name: :Conversation
+
+  has_many :messaging_users,
+           through: :received_conversations,
+           source: :first_user
+
   def ensure_session_token
     self.session_token ||= User.generate_session_token
   end
