@@ -1,4 +1,6 @@
 class Api::QuestionsController < ApplicationController
+  before_action :require_logged_in
+
   def index
     @questions = Question.includes(:answer_choices)
                          .where.not(id: current_user.questions.ids).limit(10)

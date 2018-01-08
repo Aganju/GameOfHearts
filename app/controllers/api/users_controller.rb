@@ -1,4 +1,5 @@
 class Api::UsersController < ApplicationController
+  before_action :require_logged_in, only: %i[index update]
 
   def index
     @details = Detail.all.includes(:user)
