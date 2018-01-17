@@ -58,6 +58,17 @@ class User < ActiveRecord::Base
     self.password_digest = BCrypt::Password.create(password)
   end
 
+  def conversations
+    Conversation
+      .includes({ second_user: [:detail] }, { first_user: [:detail] }, :last_message)
+      .where('first_user_id = ? OR second_user_id=?', self.id, self.id)
+  end
+
+  def conversation_id(user_id)
+    convo = Conversation.find_by first_user_id: self.id, second_user_id: user_id
+    convo.id if convo
+  end
+
   def favorite_rating(match)
     base_match = 50
     shared_questions = self.questions & match.questions
