@@ -1,5 +1,6 @@
   json.basics do
     json.partial! 'api/users/user', user: @user
+    json.conversation_id current_user.conversation_id(@user.id)
   end
   json.details do
     json.extract! @user.detail, :orientation, :gender, :height, :body_type,
