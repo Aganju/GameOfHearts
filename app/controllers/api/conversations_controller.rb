@@ -2,7 +2,7 @@ class Api::ConversationsController < ApplicationController
   before_action :require_logged_in
 
   def index
-    @conversations = current_user.conversations 
+    @conversations = current_user.conversations.order(updated_at: :desc)
   end
 
   def create
